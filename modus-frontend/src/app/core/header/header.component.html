@@ -1,0 +1,14 @@
+    <div class="site-header d-flex-jcsb-aic header-flex" >
+        <div class="app-title d-flex-jcsb-aic">
+            <!-- if logo -->
+            <span class="pointer">Modus APP</span>
+        </div>
+        <ul class="routers desktop-only d-flex-jcsb-aic">
+            <li> <a routerLinkActive="'active'"[routerLinkActiveOptions]={exact:true} routerLink="/home">Home</a></li>
+            <li> <a routerLinkActive="active" routerLink="/application/all-players" >All Players</a></li>
+            <li> <a routerLinkActive="active" routerLink="/application/add-player" >Add Player</a></li>
+            <li *ngIf="!cache.user.loggedIn"> <a routerLinkActive="active"  routerLink="/application/login" >Login</a></li>
+            <li *ngIf="cache.user.loggedIn"> <a routerLinkActive="active"  routerLink="/application/login" (click)="logout()" >Logout ({{cache.user.name}})</a></li>
+        </ul>
+        
+    </div>

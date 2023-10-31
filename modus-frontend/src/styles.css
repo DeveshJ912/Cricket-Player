@@ -1,0 +1,167 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+    position: relative;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.container {
+    margin: 10px;
+    padding: 10px;
+    min-height: calc(100vh - 148px);
+}
+
+.center {
+    text-align: center;
+}
+
+.home-flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+.home-image {
+    margin: auto;
+}
+
+.player-img {
+    margin-left: 200px;
+    /* margin-top: -100px !important; */
+}
+
+.all-players-btn {
+    margin-top: 100px;
+    margin-left: 300px;
+}
+
+.player-card {
+    margin: auto;
+    border: 2px solid grey;
+    border-radius: 5px;
+    padding: 8px 25px 8px 25px;
+    margin-bottom: 50px;
+}
+
+.player-head {
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.desc {
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.content-flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mb-25 {
+    margin-bottom: 25px;
+}
+
+.createnewbutton {
+    margin-bottom: 50px;
+}
+
+.form-body-card {
+    text-align: center;
+    margin: auto;
+    width: 50%;
+}
+
+.form-col {
+    width: 50%;
+}
+
+.spinner {
+    z-index: 1;
+    position: fixed !important;
+    top: 36%;
+    left: 50%;
+}
+
+.active {
+    color: white;
+    font-weight: bold;
+    /* background-color: aqua; */
+}
+
+table {
+    width: 100%;
+}
+.routers li{
+    cursor: pointer;
+    font-weight: bold;
+
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.site-header {
+    background-color: darkcyan;
+    min-height: 60px;
+}
+
+.routers {
+    list-style-type: none;
+    display: flex;
+}
+
+ul>li {
+    margin-right: 10px;
+}
+
+/* unvisited link */
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+}
+
+.site-header button,
+.pointer {
+    font-weight: 700;
+    color: white;
+}
+
+footer {
+    background-color: darkcyan;
+    color: white;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.cdk-global-overlay-wrapper .cdk-overlay-pane{
+    width: 80%;
+}
+
+.mr-30{
+    margin-right: 30px !important;
+}
+
+.hidepaginator{
+    display: none !important;
+}

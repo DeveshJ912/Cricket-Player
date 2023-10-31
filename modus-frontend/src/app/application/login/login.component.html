@@ -1,0 +1,128 @@
+<div class="container" *ngIf="!spinner">
+    <mat-card class="login-card form-body-card">
+
+        <div *ngIf="!signIn">
+            <div class="headers">
+                <h1 class="text-center">Sign Up</h1>
+            </div>
+            <div class="form-body-container">
+                <form [formGroup]="loginForm" class="form-body">
+                    <div class="btitle">
+                        <mat-form-field class="form-col" appearance="outline">
+                            <mat-label> First Name </mat-label>
+                            <input formControlName="firstname" matInput
+                                placeholder="Eg: The New Player" alphaWithSpaces >
+                            <mat-icon *ngIf="form?.firstname?.errors && form?.firstname?.touched" color="danger"
+                                matSuffix>error</mat-icon>
+                            <mat-icon *ngIf="form?.firstname?.valid" color="success"
+                                matSuffix>check</mat-icon>
+                            <mat-error class="error" *ngIf="form?.firstname?.errors?.required">First Name is required
+                            </mat-error>
+                            <mat-error class="error" *ngIf="form?.firstname?.errors?.minlength">First Name should have
+                                atleast of 3 characters</mat-error>
+                            
+                        </mat-form-field>
+                    </div>
+                    <div class="btitle">
+                        <mat-form-field class="form-col" appearance="outline">
+                            <mat-label> Last Name </mat-label>
+                            <input formControlName="lastname" matInput
+                                placeholder="Eg: The New Player" alphaWithSpaces>
+                            <mat-icon *ngIf="form?.lastname?.errors && form?.lastname?.touched" color="danger"
+                                matSuffix>error</mat-icon>
+                            <mat-icon *ngIf="form?.lastname?.valid" color="success"
+                                matSuffix>check</mat-icon>
+                            <mat-error class="error" *ngIf="form?.lastname?.errors?.required">Last Name is required
+                            </mat-error>
+                            <mat-error class="error" *ngIf="form?.lastname?.errors?.minlength">Last Name should have
+                                atleast of 3 characters</mat-error>
+                            
+                        </mat-form-field>
+                    </div>
+                    <div class="btitle">
+                        <mat-form-field class="form-col" appearance="outline">
+                            <mat-label> Email </mat-label>
+                            <input formControlName="email" matInput
+                                placeholder="Eg: The New Player">
+                            <mat-icon *ngIf="form?.email?.errors && form?.email?.touched" color="danger"
+                                matSuffix>error</mat-icon>
+                            <mat-icon *ngIf="form?.email?.valid" color="success"
+                                matSuffix>check</mat-icon>
+                            <mat-error class="error" *ngIf="form?.email?.errors?.required">Email is required
+                            </mat-error>
+                            <mat-error class="error" *ngIf="form?.email?.errors?.pattern">please enter valid email</mat-error>
+                            
+                        </mat-form-field>
+                    </div>
+                    <div class="bcontent">
+                        <mat-form-field class="form-col" appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+                            
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                            <mat-error class="error" *ngIf="form?.password?.errors?.required">Password is required
+                            </mat-error>
+                            <mat-error class="error" *ngIf="form?.password?.errors?.minlength">Password should have
+                                atleast of 3 characters</mat-error>
+                          </mat-form-field>
+                    </div>
+                    
+                    <div class="">
+                        <button (click)="login()" [disabled]="!loginForm.valid" class="form-col-50" mat-raised-button color="primary">Sign Up</button>
+                    </div>
+                    
+                </form>
+                <p class="text-center no-margin">Already have an account? <a (click)="signInToggle()" href="javascript:void(0)">Sign In</a></p>
+    
+            </div>
+        </div>
+        <div *ngIf="signIn">
+            <div class="headers">
+                <h1 class="text-center">Login</h1>
+            </div>
+            <div class="form-body-container">
+                <form [formGroup]="loginForm" class="form-body">
+                    <div class="btitle">
+                        <mat-form-field class="form-col" appearance="outline">
+                            <mat-label> Email </mat-label>
+                            <input formControlName="email" matInput
+                                placeholder="Eg: The New Player">
+                            <mat-icon *ngIf="form?.email?.errors && form?.email?.touched" color="danger"
+                                matSuffix>error</mat-icon>
+                            <mat-icon *ngIf="form?.email?.valid" color="success"
+                                matSuffix>check</mat-icon>
+                            <mat-error class="error" *ngIf="form?.email?.errors?.required">Email is required
+                            </mat-error>
+                            <mat-error class="error" *ngIf="form?.email?.errors?.pattern">please enter valid email</mat-error>
+                            
+                        </mat-form-field>
+                    </div>
+                    <div class="bcontent">
+                        <mat-form-field class="form-col" appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+                            
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                            <mat-error class="error" *ngIf="form?.password?.errors?.required">Password is required
+                            </mat-error>
+                            <mat-error class="error" *ngIf="form?.password?.errors?.minlength">Password should have
+                                atleast of 3 characters</mat-error>
+                          </mat-form-field>
+                    </div>
+                    
+                    <div class="">
+                        <button (click)="login()" [disabled]="!loginForm.valid" class="form-col-50" mat-raised-button color="primary">Login</button>
+                    </div>
+                    
+                </form>
+                <p class="text-center no-margin">Don't have an account? <a (click)="signInToggle()" href="javascript:void(0)">Sign Up</a></p>
+    
+            </div>
+        </div>
+    </mat-card>
+</div>
+<mat-spinner class="spinner" *ngIf="spinner"></mat-spinner>

@@ -1,0 +1,89 @@
+<div class="login-container">
+    <mat-card class="login-card form-body-card">
+        <div class="headers">
+            <h1 class="text-center">Edit Player</h1>
+        </div>
+        <div class="form-body-container">
+            <form [formGroup]="createPlayer" class="form-body">
+                <div class="btitle">
+                    <mat-form-field class="form-col" appearance="outline">
+                        <mat-label> Name </mat-label>
+                        <input formControlName="name" matInput
+                            placeholder="Eg: Sachin Tendulkar" alphaWithSpaces>
+                        <mat-icon *ngIf="form?.name?.errors && form?.name?.touched" color="danger"
+                            matSuffix>error</mat-icon>
+                        <mat-icon *ngIf="form?.name?.valid" color="success"
+                            matSuffix>check</mat-icon>
+                        <mat-error class="error" *ngIf="form?.name?.errors?.required">Name is required
+                        </mat-error>
+                        <mat-error class="error" *ngIf="form?.name?.errors?.minlength">Name should
+                            have at least of 3 characters</mat-error>
+                        
+                    </mat-form-field>
+                </div>
+                <div class="bcontent">
+                    <mat-form-field class="form-col" appearance="outline">
+                        <mat-label> Country </mat-label>
+                        <input formControlName="country" matInput
+                            placeholder="Eg: India" alphaWithSpaces>
+                        <mat-icon *ngIf="form?.country?.errors && form?.country?.touched" color="danger"
+                            matSuffix>error</mat-icon>
+                        <mat-icon *ngIf="form?.country?.valid" color="success"
+                            matSuffix>check</mat-icon>
+                        <mat-error class="error" *ngIf="form?.country?.errors?.required">country is required
+                        </mat-error>
+                        <mat-error class="error" *ngIf="form?.country?.errors?.minlength">country should have
+                            atleast of 3 characters</mat-error>
+                        
+                    </mat-form-field>
+                </div>
+                <div class="btitle">
+                    <mat-form-field class="form-col" appearance="outline">
+                        <mat-label> Fifty</mat-label>
+                        <input formControlName="fifty" matInput
+                            placeholder="Eg: 50" numberOnly>
+                        <mat-icon *ngIf="form?.fifty?.errors && form?.fifty?.touched" color="danger"
+                            matSuffix>error</mat-icon>
+                        <mat-icon *ngIf="form?.fifty?.valid" color="success"
+                            matSuffix>check</mat-icon>
+                        <mat-error class="error" *ngIf="form?.fifty?.errors?.required">fifty is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="bcontent">
+                    <mat-form-field class="form-col" appearance="outline">
+                        <mat-label> century </mat-label>
+                        <input formControlName="century" matInput
+                            placeholder="Eg: 20" numberOnly>
+                        <mat-icon *ngIf="form?.century?.errors && form?.century?.touched" color="danger"
+                            matSuffix>error</mat-icon>
+                        <mat-icon *ngIf="form?.century?.valid" color="success"
+                            matSuffix>check</mat-icon>
+                        <mat-error class="error" *ngIf="form?.century?.errors?.required">century is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="bcontent">
+                    <mat-form-field class="form-col" appearance="outline">
+                        <mat-label> matches </mat-label>
+                        <input formControlName="matches" matInput
+                            placeholder="Eg: 200" numberOnly>
+                        <mat-icon *ngIf="form?.matches?.errors && form?.matches?.touched" color="danger"
+                            matSuffix>error</mat-icon>
+                        <mat-icon *ngIf="form?.matches?.valid" color="success"
+                            matSuffix>check</mat-icon>
+                        <mat-error class="error" *ngIf="form?.matches?.errors?.required">matches is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                
+                <div>
+                    <button mat-raised-button (click)="edit()" [disabled]="!createPlayer.valid" class="form-col-50 mr-30"  color="primary">Edit Player</button>
+                    <button mat-raised-button (click)="close()" class="form-col-50" >close</button>
+
+                </div>
+                
+            </form>
+        </div>
+    </mat-card>
+</div>
