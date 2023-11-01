@@ -7,7 +7,7 @@ Steps to setup the project
 2.Open the project in a code editor
 3.Install npm using "npm i" command for both backend and frontend
 4.For running project
-  a.For Backend run "nodemon server.js" command
+  a.For Backend run "node server.js" or "nodemon server.js" command
   b.For Frontend run "ng serve" command"
 5.When both backend and frontend are running succefully then go to "localhost:4200" on your browser
 6.It will land on Home Page, from here you can navigate to various pages from headers or you can click on see players button on home page.
